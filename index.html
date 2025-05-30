@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Horizontal Layout with Sliding Image</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #ffffff;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      height: 100vh;
+      padding: 0 5vw;
+      box-sizing: border-box;
+    }
+
+    .text {
+      flex: 1;
+      max-width: 45%;
+      font-size: 1.5rem;
+      color: #222;
+    }
+
+    .image-wrapper {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      max-width: 50%;
+      position: relative;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      transform: translateX(100%);
+      animation: slideIn 1.2s ease-out forwards;
+    }
+
+    @keyframes slideIn {
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="text">
+      <h1>Your Headline Here</h1>
+      <p>This is your content area. You can place any text you like here. On the right, an image smoothly slides in from off-screen to capture attention.</p>
+    </div>
+    <div class="image-wrapper">
+      <img src="https://i.gyazo.com/72a6acb1dbe838a49a254f5d14b2a326.png" alt="Zoom">
+    </div>
+  </div>
+
+</body>
+</html>
